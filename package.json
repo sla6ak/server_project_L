@@ -2,9 +2,9 @@
   "name": "server_project_l",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "tsx watch src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,20 +14,31 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/sla6ak/server_project_L/issues"
   },
   "homepage": "https://github.com/sla6ak/server_project_L#readme",
   "dependencies": {
     "@colyseus/schema": "^4.0.26",
-    "colyseus": "^0.17.10",
-    "express": "^5.2.1"
+    "@colyseus/ws-transport": "^0.17.13",
+    "bcrypt": "^6.0.0",
+    "colyseus": "^0.15.13",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "google-auth-library": "^10.7.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.9.3",
     "ts-node": "^10.9.2",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }

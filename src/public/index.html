@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost Space API Server</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background: #f5f5f5;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+      }
+      .status {
+        display: inline-block;
+        padding: 8px 16px;
+        background: #27ae60;
+        color: white;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      .endpoints {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+      .endpoint {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+      }
+      .endpoint:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .method {
+        display: inline-block;
+        padding: 4px 8px;
+        background: #3498db;
+        color: white;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+      .frontend-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background: #2c3e50;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+      }
+      .frontend-link:hover {
+        background: #34495e;
+      }
+      .websocket-info {
+        margin-top: 30px;
+        padding: 20px;
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="status">Server Online</div>
+      <h1>Lost Space API Server</h1>
+
+      <p>
+        This is the API server for Lost Space application. The server provides
+        authentication and real-time communication services.
+      </p>
+
+      <div class="endpoints">
+        <h2>Available Endpoints:</h2>
+
+        <div class="endpoint">
+          <span class="method">POST</span>
+          <code>/auth/signup</code>
+          <p>Register a new user account</p>
+        </div>
+
+        <div class="endpoint">
+          <span class="method">POST</span>
+          <code>/auth/login</code>
+          <p>Authenticate user and get access token</p>
+        </div>
+
+        <div class="endpoint">
+          <span class="method">GET</span>
+          <code>/auth/current</code>
+          <p>Get current user information</p>
+        </div>
+
+        <div class="endpoint">
+          <span class="method">POST</span>
+          <code>/auth/logout</code>
+          <p>Logout current user</p>
+        </div>
+      </div>
+
+      <div class="websocket-info">
+        <h3>WebSocket Support</h3>
+        <p>
+          This server also provides WebSocket endpoints for real-time
+          communication.
+        </p>
+        <p>WebSocket URL: <code>ws://[server-address]/</code></p>
+      </div>
+
+      <a href="FRONTEND_URL" class="frontend-link"
+        >Visit Frontend Application</a
+      >
+    </div>
+
+    <script>
+      // Динамически подставляем URL фронтенда
+      document.querySelector(".frontend-link").href =
+        window.FRONTEND_URL || "https://lost-space.vercel.app/";
+    </script>
+  </body>
+</html>
