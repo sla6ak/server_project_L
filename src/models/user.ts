@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const UserSchema = new Schema({
-  nickname: {
+  nickName: {
     type: String,
     unique: true,
     required: [true, "Nickname is required"],
@@ -20,7 +20,7 @@ const UserSchema = new Schema({
   },
   online: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   registrationDate: {
     type: Date,
