@@ -63,14 +63,6 @@ app.get("/", (req, res) => {
 // Debug middleware
 app.use((req, res, next) => {
   console.log(`[DEBUG] ${req.method} ${req.path}`);
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization, x-csrf-token",
-  );
-
   if (req.method === "OPTIONS") {
     return res.sendStatus(200);
   }
